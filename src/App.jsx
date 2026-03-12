@@ -778,74 +778,125 @@ export default function MotocrossApp() {
     
 
 
-          {/* FOOTER */}
+{/* FOOTER */}
 <footer id="contact">
   <div className="footer-grid">
+
+    {/* Marca */}
     <div>
       <div className="footer-brand">MOTOCROSS</div>
       <div className="footer-brand">EVENTO ANUAL</div>
+
+      <p className="footer-desc">
+        Competencia anual de motocross en Bajo Caliente. 
+        Velocidad, adrenalina y pasión por las motos en un 
+        evento único para pilotos y fanáticos.
+      </p>
     </div>
 
+    {/* Navegación */}
     <div>
       <div className="footer-col-title">Links Rápidos</div>
+
       <ul className="footer-links">
         {[
-          { label: "Página Principal", href: "#home" },
-          { label: "Acerca de", href: "#about" },
-          { label: "Inscripción", href: "#signup" },
-          { label: "Medios", href: "#media" },
-          { label: "Contacto", href: "#contact" },
-        ].map((link) => (
-          <li key={link.label}>
-            <a href={link.href}>{link.label}</a>
+          { name: "Página Principal", link: "#home" },
+          { name: "Acerca de", link: "#about" },
+          { name: "Inscripción", link: "#signup" },
+          { name: "Galería / Medios", link: "#media" },
+          { name: "Contacto", link: "#contact" }
+        ].map((item) => (
+          <li key={item.name}>
+            <a href={item.link}>{item.name}</a>
           </li>
         ))}
       </ul>
     </div>
 
+    {/* Contacto */}
     <div>
       <div className="footer-col-title">Contacto</div>
+
       <ul className="footer-links">
+
         <li>
           <a href="mailto:motocross-bajo-caliente@gmail.com">
             motocross-bajo-caliente@gmail.com
           </a>
         </li>
+
         <li>
-          <a href="https://api.whatsapp.com/send/?phone=50687781125">+506 8778-1125</a>
+          <a href="tel:+50587781125">
+            +(505) 8778-1125
+          </a>
         </li>
+
         <li>
-          <a href="#contact">Circuito Motocross</a>
+          <a 
+            href="https://maps.google.com" 
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Circuito Motocross
+          </a>
         </li>
+
         <li>
-          <a href="#contact">11 de Abril, 2026</a>
+          11 de Abril, 2026
         </li>
+
       </ul>
     </div>
+
   </div>
 
-  <div className="footer-bottom">
-    <div className="footer-copy">© 2026 Motocross. Derechos Reservados.</div>
 
+  {/* Footer inferior */}
+  <div className="footer-bottom">
+
+    <div className="footer-copy">
+      © 2026 Motocross — Todos los derechos reservados
+    </div>
+
+
+    {/* Redes sociales */}
     <div className="footer-socials">
+
       {[
-        { key: "ig", href: "https://www.instagram.com/endurobajocaliente?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", icon: "📷" },
-        { key: "fb", href: "https://www.facebook.com/profile.php?id=61558448635248", icon: "f" },
-        { key: "yt", href: "https://youtube.com", icon: "▶" },
-        { key: "tw", href: "https://twitter.com", icon: "✕" },
-      ].map((social) => (
+        {
+          icon: "📷",
+          link: "https://instagram.com"
+        },
+        {
+          icon: "📘",
+          link: "https://www.facebook.com/profile.php?id=61558448635248"
+        },
+        {
+          icon: "▶",
+          link: "https://youtube.com"
+        },
+        {
+          icon: "✕",
+          link: "https://twitter.com"
+        }
+      ].map((social, i) => (
+
         <a
+          key={i}
           className="social-link"
-          key={social.key}
-          href={social.href}
+          href={social.link}
           target="_blank"
           rel="noopener noreferrer"
         >
           {social.icon}
         </a>
+
       ))}
+
     </div>
+
   </div>
+
 </footer>
 
       {/* REGISTRATION MODAL */}
