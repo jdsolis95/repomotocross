@@ -607,7 +607,7 @@ export default function MotocrossApp() {
   const [selectedYear, setSelectedYear] = useState("2025");
   const [activeCategory, setActiveCategory] = useState("ALL");
   const [showModal, setShowModal] = useState(false);
-  const [formData, setFormData] = useState({ name: "", lastname: "", email: "", category: "", rider: "" });
+  const [formData, setFormData] = useState({ Nombre: "", Apellido: "", Cedula: "", Correo: "", Categoría: "", Piloto: "" });
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
@@ -621,7 +621,7 @@ export default function MotocrossApp() {
   }, []);
 
   const mediaItems = selectedYear === "2025" ? mediaItems2025 : mediaItems2026;
-  const categories = ["ALL", "MX1", "MX2", "MX3", "KIDS", "VETERANS"];
+  const categories = ["ALL", "MX1", "MX2", "MX3", "NIÑOS", "VETERANOS"];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -635,22 +635,22 @@ export default function MotocrossApp() {
 
       {/* LOADING SCREEN */}
       <div className={`loader ${loaded ? "hidden" : ""}`}>
-        <div className="loader-title">MOTO<span>X</span><br/>EXTREME</div>
-        <div className="loader-sub">Championship Series · 2025 / 2026</div>
+        <div className="loader-title">MOTOCROSS<br/></div>
+        <div className="loader-sub">CAMPEONATO. 2026</div>
         <div className="loader-track"><div className="loader-bar" /></div>
         <div className="loader-pct">{pct}%</div>
       </div>
 
       {/* NAV */}
       <nav>
-        <div className="nav-logo">MOTO<span>X</span></div>
+        <div className="nav-logo">MOTOCROSS<span></span></div>
         <ul className="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#inscription">Inscription</a></li>
+          <li><a href="#about">Acerca de</a></li>
+          <li><a href="#inscription">Proceso de Inscripción</a></li>
           <li><a href="#media">Media</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Contacto</a></li>
         </ul>
-        <button className="nav-cta" onClick={() => setShowModal(true)}>Register Now</button>
+        <button className="nav-cta" onClick={() => setShowModal(true)}>Registrarme Ahora</button>
       </nav>
 
       {/* HERO */}
@@ -658,27 +658,27 @@ export default function MotocrossApp() {
         <div className="hero-bg" />
         <div className="hero-noise" />
         <div className="hero-number">26</div>
-        <div className="hero-eyebrow">Championship Series · Season 2026</div>
+        <div className="hero-eyebrow">Campeonato · Edición 2026</div>
         <h1 className="hero-title">
-          RIDE<br />
-          <span className="accent">OR DIE</span>
+          BAJO CALIENTE<br />
+          <span className="accent">ARANCIBIA</span>
         </h1>
         <div className="hero-meta">
           <div className="hero-meta-item">
-            <span className="hero-meta-label">Date</span>
-            <span className="hero-meta-value">AUG 15–17, 2026</span>
+            <span className="hero-meta-label">Fecha</span>
+            <span className="hero-meta-value">11 de Abril, 2026</span>
           </div>
           <div className="hero-meta-item">
-            <span className="hero-meta-label">Location</span>
-            <span className="hero-meta-value">Desert Plains Circuit</span>
+            <span className="hero-meta-label">Ubicación</span>
+            <span className="hero-meta-value">Bajo caliente, Puntarenas.</span>
           </div>
           <div className="hero-meta-item">
-            <span className="hero-meta-label">Categories</span>
-            <span className="hero-meta-value">5 Classes</span>
+            <span className="hero-meta-label">Categorias</span>
+            <span className="hero-meta-value">5 Categorias</span>
           </div>
           <div className="hero-meta-item">
-            <span className="hero-meta-label">Prize Pool</span>
-            <span className="hero-meta-value">$50,000</span>
+            <span className="hero-meta-label">Precio Inscripción</span>
+            <span className="hero-meta-value">18,000 CRC</span>
           </div>
         </div>
         <div className="hero-scroll">
@@ -689,17 +689,17 @@ export default function MotocrossApp() {
 
       {/* ABOUT */}
       <section className="about" id="about">
-        <div className="section-label">About the Event</div>
+        <div className="section-label">Acerca del evento</div>
         <div className="about-grid">
           <div>
-            <h2 className="section-title">THE BIGGEST<br />MX RACE<br />OF THE YEAR</h2>
+            <h2 className="section-title">EL EVENTO DE<br />MOTOCROSS <br /> MÁS GRANDE DE LA ZONA</h2>
             <div className="about-text">
-              <p>MotoX Extreme Championship brings together the best motocross riders from across the continent for two days of raw, unfiltered competition. From blazing sand dunes to technical berms, our circuit is engineered to push every rider to their limit.</p>
-              <p>Whether you're a seasoned pro or a passionate amateur, this is where legends are made — and where the dirt flies hardest.</p>
+              <p>El Campeonato MotoX Extreme reúne a los mejores pilotos de motocross de toda la región para vivir un día de competencia pura y sin filtros. Tramos de montaña intensa hasta curvas técnicas, nuestro circuito está diseñado para llevar a cada piloto al límite.</p>
+              <p>Ya seas un profesional experimentado o un aficionado apasionado, este es el lugar para vos.</p>
             </div>
           </div>
           <div className="about-stats">
-            {[["500+", "Riders"], ["12", "Nations"], ["3rd", "Edition"], ["50K", "Prize Pool $"]].map(([n, l]) => (
+            {[["200+", "Pilotos"], ["7", "Provincias"], ["3ra", "Edición"], ["18.000 CRC", "Precio Inscripción"]].map(([n, l]) => (
               <div className="stat-card" key={l}>
                 <div className="stat-num">{n}</div>
                 <div className="stat-desc">{l}</div>
@@ -711,14 +711,14 @@ export default function MotocrossApp() {
 
       {/* INSCRIPTION */}
       <section className="inscription" id="inscription">
-        <div className="section-label">How to Join</div>
-        <h2 className="section-title">INSCRIPTION<br />PROCESS</h2>
+        <div className="section-label">Cómo Inscribirse?</div>
+        <h2 className="section-title">PROCESO DE<br />INSCRIPCION</h2>
         <div className="steps-container">
           {[
-            { icon: "📋", title: "Register Online", desc: "Fill out the registration form with your personal info and select your competing category.", tag: "5 min" },
-            { icon: "💳", title: "Pay Entry Fee", desc: "Secure your spot with our online payment system. Entry fees vary by category and age group.", tag: "Instant" },
-            { icon: "🏍️", title: "Tech Inspection", desc: "Bring your bike for technical inspection on event day. All machinery must meet safety standards.", tag: "On site" },
-            { icon: "🏁", title: "Race Day", desc: "Collect your rider bib, attend the briefing, and get ready to conquer the track.", tag: "Race day" },
+            { icon: "📋", title: "Registrarse en línea", desc: "Completa el formulario de registro con tu información personal y selecciona tu categoría de competencia.", tag: "5 min" },
+            { icon: "💳", title: "Pagar la Tarifa de Inscripción", desc: "Asegura tu lugar con nuestro sistema de pago en línea. Las tarifas de inscripción varían por categoría y grupo de edad.", tag: "Instantáneo" },
+            { icon: "🏍️", title: "Inspección Técnica", desc: "Lleva tu motocicleta para su inspección técnica el día del evento. Todas las máquinas deben cumplir con los estándares de seguridad.", tag: "En el lugar" },
+            { icon: "🏁", title: "Día de la Carrera", desc: "Recoge tu chaleco de piloto, asiste a la reunión de prensa y prepárate para conquistar la pista.", tag: "Día de la carrera" },
           ].map((s, i) => (
             <div className="step" key={i}>
               <div className="step-number">{String(i + 1).padStart(2, "0")}</div>
@@ -732,7 +732,7 @@ export default function MotocrossApp() {
 
         {/* CATEGORIES */}
         <div style={{ marginTop: 60 }}>
-          <div className="section-label">Race Categories</div>
+          <div className="section-label">Categorias de Carrera</div>
           <div className="cats-grid">
             {categories.map(c => (
               <button key={c} className={`cat-pill ${activeCategory === c ? "active" : ""}`} onClick={() => setActiveCategory(c)}>{c}</button>
@@ -756,8 +756,8 @@ export default function MotocrossApp() {
 
       {/* MEDIA GALLERY */}
       <section className="media" id="media">
-        <div className="section-label">Event Media</div>
-        <h2 className="section-title">RACE<br />GALLERY</h2>
+        <div className="section-label">Medios del Evento</div>
+        <h2 className="section-title">GALERÍA<br />DE IMÁGENES</h2>
         <div className="year-toggle">
           <button className={`year-btn ${selectedYear === "2025" ? "active" : ""}`} onClick={() => setSelectedYear("2025")}>2025</button>
           <button className={`year-btn ${selectedYear === "2026" ? "active" : ""}`} onClick={() => setSelectedYear("2026")}>2026</button>
@@ -779,37 +779,38 @@ export default function MotocrossApp() {
       {/* REGISTER CTA */}
       <div className="register">
         <div className="register-text">
-          <div className="section-label">Don't Miss Out</div>
-          <h2 className="section-title">SECURE YOUR<br />SPOT TODAY</h2>
+          <div className="section-label">NO TE LO  PIERDAS! </div>
+          <h2 className="section-title">ASEGURA TU<br />LUGAR HOY</h2>
         </div>
-        <button className="register-btn" onClick={() => setShowModal(true)}>REGISTER NOW →</button>
+        <button className="register-btn" onClick={() => setShowModal(true)}>INSCRIBIRME →</button>
       </div>
 
       {/* FOOTER */}
       <footer id="contact">
         <div className="footer-grid">
           <div>
-            <div className="footer-brand">MOTO<span>X</span></div>
-            <div className="footer-desc">The premier motocross championship event. Dust, speed, and glory — every year, without exception.</div>
+            <div className="footer-brand">MOTOCROSS</div>
+            <div className="footer-brand"> EVENTO ANUAL </div>
+            
           </div>
           <div>
-            <div className="footer-col-title">Quick Links</div>
+            <div className="footer-col-title">Links Rápidos</div>
             <ul className="footer-links">
-              {["Home", "About", "Inscription", "Media", "Contact"].map(l => <li key={l}><a href="#">{l}</a></li>)}
+              {["Página Principal", "Acerca de", "Inscripción", "Medios", "Contacto"].map(l => <li key={l}><a href="#">{l}</a></li>)}
             </ul>
           </div>
           <div>
-            <div className="footer-col-title">Contact</div>
+            <div className="footer-col-title">Contact0</div>
             <ul className="footer-links">
-              <li><a href="#">info@motox.com</a></li>
-              <li><a href="#">+1 (555) 090-8070</a></li>
-              <li><a href="#">Desert Plains Circuit</a></li>
-              <li><a href="#">Aug 15–17, 2026</a></li>
+              <li><a href="#">motocross-bajo-caliente@gmail.com</a></li>
+              <li><a href="#">+(505) 8778-1125</a></li>
+              <li><a href="#">Circuito Motocross</a></li>
+              <li><a href="#">11 de Abril, 2026</a></li>
             </ul>
           </div>
         </div>
         <div className="footer-bottom">
-          <div className="footer-copy">© 2026 MotoX Extreme Championship. All rights reserved.</div>
+          <div className="footer-copy">© 2026 Motocross. Derechos Reservados.</div>
           <div className="footer-socials">
             {["ig", "fb", "yt", "tw"].map(s => <a className="social-link" key={s} href="#">{s === "ig" ? "📷" : s === "fb" ? "f" : s === "yt" ? "▶" : "✕"}</a>)}
           </div>
@@ -824,42 +825,46 @@ export default function MotocrossApp() {
             {submitted ? (
               <div style={{ textAlign: "center", padding: "40px 0" }}>
                 <div style={{ fontSize: 56, marginBottom: 16 }}>🏁</div>
-                <div className="modal-title">YOU'RE IN!</div>
-                <div style={{ color: "var(--muted)", fontSize: 15 }}>Registration received. Check your email for confirmation.</div>
+                <div className="modal-title">INSCRITO!</div>
+                <div style={{ color: "var(--muted)", fontSize: 15 }}>Solicitud de regiatro recibida, por favor revise su correo electrónico.</div>
               </div>
             ) : (
               <>
-                <div className="modal-title">RACE REGISTRATION</div>
-                <div className="modal-sub">MotoX Extreme Championship 2026</div>
+                <div className="modal-title">FOMULARIO DE REGISTRO</div>
+                <div className="modal-sub">CAMPEONATO 2026</div>
                 <form onSubmit={handleSubmit}>
                   <div className="form-row">
                     <div className="form-group">
-                      <label>First Name</label>
-                      <input required value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })} placeholder="Jorge" />
+                      <label>Nombre</label>
+                      <input required value={formData.Nombre} onChange={e => setFormData({ ...formData, Nombre: e.target.value })} placeholder="Jorge" />
                     </div>
                     <div className="form-group">
-                      <label>Last Name</label>
-                      <input required value={formData.lastname} onChange={e => setFormData({ ...formData, lastname: e.target.value })} placeholder="Martínez" />
+                      <label>Apellido</label>
+                      <input required value={formData.Apellido} onChange={e => setFormData({ ...formData, Apellido: e.target.value })} placeholder="Martínez" />
                     </div>
                   </div>
                   <div className="form-group" style={{ marginBottom: 16 }}>
-                    <label>Email</label>
-                    <input type="email" required value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} placeholder="jorge@email.com" />
+                    <label>Cédula</label>
+                    <input required value={formData.Cedula} onChange={e => setFormData({ ...formData, Cedula: e.target.value })} placeholder="1-0345-0789" />
+                  </div>
+                  <div className="form-group" style={{ marginBottom: 16 }}>
+                    <label>Correo Electrónico</label>
+                    <input type="email" required value={formData.Correo} onChange={e => setFormData({ ...formData, Correo: e.target.value })} placeholder="jorge@email.com" />
                   </div>
                   <div className="form-row">
                     <div className="form-group">
-                      <label>Category</label>
-                      <select required value={formData.category} onChange={e => setFormData({ ...formData, category: e.target.value })}>
+                      <label>Categoría</label>
+                      <select required value={formData.Categoría} onChange={e => setFormData({ ...formData, Categoría: e.target.value })}>
                         <option value="">Select class</option>
                         {["MX1 (450cc)", "MX2 (250cc)", "MX3 (125cc)", "Kids", "Veterans"].map(c => <option key={c}>{c}</option>)}
                       </select>
                     </div>
                     <div className="form-group">
-                      <label>Rider Number</label>
-                      <input type="number" value={formData.rider} onChange={e => setFormData({ ...formData, rider: e.target.value })} placeholder="42" min="1" max="999" />
+                      <label>Piloto</label>
+                      <input type="number" value={formData.Piloto} onChange={e => setFormData({ ...formData, Piloto: e.target.value })} placeholder="42" min="1" max="999" />
                     </div>
                   </div>
-                  <button type="submit" className="form-submit">CONFIRM REGISTRATION →</button>
+                  <button type="submit" className="form-submit">CONFIRMAR REGISTRO →</button>
                 </form>
               </>
             )}
