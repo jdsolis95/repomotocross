@@ -812,7 +812,7 @@ export default function MotocrossApp() {
           </a>
         </li>
         <li>
-          <a href="tel:+50587781125">+(505) 8778-1125</a>
+          <a href="https://api.whatsapp.com/send/?phone=50687781125">+506 8778-1125</a>
         </li>
         <li>
           <a href="#contact">Circuito Motocross</a>
