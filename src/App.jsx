@@ -826,7 +826,7 @@ export default function MotocrossApp() {
         </li>
 
         <li>
-          <a href="tel:+50587781125">
+          <a href="https://wa.me/50687781125">
             +(505) 8778-1125
           </a>
         </li>
