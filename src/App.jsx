@@ -637,7 +637,7 @@ export default function MotocrossApp() {
       <div className={`loader ${loaded ? "hidden" : ""}`}>
         <div className="loader-title">MOTOCROSS<br/></div>
         <div className="loader-sub">CAMPEONATO. 2026</div>
-        <div className="loader-track"><div className="loader-bar" /></div>
+        <div className="loader-track"><div className="loader.bar" /></div>
         <div className="loader-pct">{pct}%</div>
       </div>
 
@@ -775,47 +775,78 @@ export default function MotocrossApp() {
           ))}
         </div>
       </section>
+    
 
-      {/* REGISTER CTA */}
-      <div className="register">
-        <div className="register-text">
-          <div className="section-label">NO TE LO  PIERDAS! </div>
-          <h2 className="section-title">ASEGURA TU<br />LUGAR HOY</h2>
-        </div>
-        <button className="register-btn" onClick={() => setShowModal(true)}>INSCRIBIRME →</button>
-      </div>
 
-      {/* FOOTER */}
-      <footer id="contact">
-        <div className="footer-grid">
-          <div>
-            <div className="footer-brand">MOTOCROSS</div>
-            <div className="footer-brand"> EVENTO ANUAL </div>
-            
-          </div>
-          <div>
-            <div className="footer-col-title">Links Rápidos</div>
-            <ul className="footer-links">
-              {["Página Principal", "Acerca de", "Inscripción", "Medios", "Contacto"].map(l => <li key={l}><a href="#">{l}</a></li>)}
-            </ul>
-          </div>
-          <div>
-            <div className="footer-col-title">Contact0</div>
-            <ul className="footer-links">
-              <li><a href="#">motocross-bajo-caliente@gmail.com</a></li>
-              <li><a href="#">+(505) 8778-1125</a></li>
-              <li><a href="#">Circuito Motocross</a></li>
-              <li><a href="#">11 de Abril, 2026</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <div className="footer-copy">© 2026 Motocross. Derechos Reservados.</div>
-          <div className="footer-socials">
-            {["ig", "fb", "yt", "tw"].map(s => <a className="social-link" key={s} href="#">{s === "ig" ? "📷" : s === "fb" ? "f" : s === "yt" ? "▶" : "✕"}</a>)}
-          </div>
-        </div>
-      </footer>
+          {/* FOOTER */}
+<footer id="contact">
+  <div className="footer-grid">
+    <div>
+      <div className="footer-brand">MOTOCROSS</div>
+      <div className="footer-brand">EVENTO ANUAL</div>
+    </div>
+
+    <div>
+      <div className="footer-col-title">Links Rápidos</div>
+      <ul className="footer-links">
+        {[
+          { label: "Página Principal", href: "#home" },
+          { label: "Acerca de", href: "#about" },
+          { label: "Inscripción", href: "#signup" },
+          { label: "Medios", href: "#media" },
+          { label: "Contacto", href: "#contact" },
+        ].map((link) => (
+          <li key={link.label}>
+            <a href={link.href}>{link.label}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <div className="footer-col-title">Contacto</div>
+      <ul className="footer-links">
+        <li>
+          <a href="mailto:motocross-bajo-caliente@gmail.com">
+            motocross-bajo-caliente@gmail.com
+          </a>
+        </li>
+        <li>
+          <a href="tel:+50587781125">+(505) 8778-1125</a>
+        </li>
+        <li>
+          <a href="#contact">Circuito Motocross</a>
+        </li>
+        <li>
+          <a href="#contact">11 de Abril, 2026</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div className="footer-bottom">
+    <div className="footer-copy">© 2026 Motocross. Derechos Reservados.</div>
+
+    <div className="footer-socials">
+      {[
+        { key: "ig", href: "https://www.instagram.com/endurobajocaliente?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", icon: "📷" },
+        { key: "fb", href: "https://www.facebook.com/profile.php?id=61558448635248", icon: "f" },
+        { key: "yt", href: "https://youtube.com", icon: "▶" },
+        { key: "tw", href: "https://twitter.com", icon: "✕" },
+      ].map((social) => (
+        <a
+          className="social-link"
+          key={social.key}
+          href={social.href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {social.icon}
+        </a>
+      ))}
+    </div>
+  </div>
+</footer>
 
       {/* REGISTRATION MODAL */}
       {showModal && (
@@ -855,8 +886,8 @@ export default function MotocrossApp() {
                     <div className="form-group">
                       <label>Categoría</label>
                       <select required value={formData.Categoría} onChange={e => setFormData({ ...formData, Categoría: e.target.value })}>
-                        <option value="">Select class</option>
-                        {["MX1 (450cc)", "MX2 (250cc)", "MX3 (125cc)", "Kids", "Veterans"].map(c => <option key={c}>{c}</option>)}
+                        <option value="">Seleccione Categoría</option>
+                        {["MX1 (450cc)", "MX2 (250cc)", "MX3 (125cc)", "Niños", "Veteranos"].map(c => <option key={c}>{c}</option>)}
                       </select>
                     </div>
                     <div className="form-group">
